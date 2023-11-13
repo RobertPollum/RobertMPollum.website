@@ -13,9 +13,11 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import UserProfile from './profile-picture';
+import Link from 'next/link';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [{menuName: 'NextCloud', link: '/nextcloud'}];
+// const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings : string[] = [];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -89,8 +91,8 @@ function ResponsiveAppBar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.menuName} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page.menuName}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -116,13 +118,15 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
+                <Link href={page.link} >
               <Button
-                key={page}
+                key={page.menuName}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                {page.menuName}
               </Button>
+              </Link>
             ))}
           </Box>
 
