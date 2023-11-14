@@ -41,13 +41,16 @@ function ResponsiveAppBar() {
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
+        
         <Toolbar disableGutters>
+        <Link href="/">
+            <Container sx={{display: { xs: 'inline-flex'}}}>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
+            // component="a"
+            // href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -60,6 +63,8 @@ function ResponsiveAppBar() {
           >
             Robert Pollum
           </Typography>
+          </Container>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
