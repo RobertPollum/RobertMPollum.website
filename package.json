@@ -1,6 +1,7 @@
 {
   "name": "robertmpollum.website",
   "version": "0.1.0",
+  "homepage": "robertmpollum.xyz",
   "private": true,
   "scripts": {
     "dev": "next dev",
