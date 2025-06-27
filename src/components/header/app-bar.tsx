@@ -14,11 +14,20 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import UserProfile from './profile-picture';
 import Link from 'next/link';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import JsFiddleIcon from '@/components/icons/js-fiddle-icon';
+import PersonalLink from './personal-link';
 
-const pages = [{menuName: 'NextCloud', link: '/nextcloud'}];
+// const pages = [{menuName: 'NextCloud', link: '/nextcloud'}];
+const pages = new Array<{menuName: string, link: string}>();
+const links = [
+  {icon: <GitHubIcon/>, link: 'https://github.com/RobertPollum' , displayName: 'Github'},
+  {icon: <LinkedInIcon/>, link: 'https://www.linkedin.com/in/robert-pollum-aa88b6b2' , displayName: 'LinkedIn'},
+  {icon: <JsFiddleIcon/>, link: 'https://jsfiddle.net/u/UnderPenalty/fiddles/' , displayName: 'JsFiddle'},
+];
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const settings : string[] = [];
-
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -44,8 +53,7 @@ function ResponsiveAppBar() {
         
         <Toolbar disableGutters>
         <Link href="/">
-            <Container sx={{display: { xs: 'inline-flex'}}}>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Container sx={{display: { xs: 'inline-flex'}}}>
           <Typography
             variant="h6"
             noWrap
@@ -157,9 +165,14 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
+              {/* {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))} */}
+              {links.map((link) => (
+                <MenuItem key={link.displayName} onClick={handleCloseUserMenu}>
+                    <PersonalLink icon={link.icon} link={link.link} displayName={link.displayName} />
                 </MenuItem>
               ))}
             </Menu>

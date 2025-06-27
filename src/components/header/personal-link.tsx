@@ -14,7 +14,7 @@ export default function PersonalLink(props: PersonalComponentProps) {
             {icon}
         </Grid>
         <Grid item xs={8}>
-            <Link href={link}>{displayName}</Link>
+            <Link href={link} target="_blank" rel="noreferrer">{displayName}</Link>
         </Grid>
     </Grid>)
 }
