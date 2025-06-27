@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <PersonalLink icon={<GitHubIcon/>} link='https://github.com/UnderPenalty' displayName='Under Penalty'/>
+        <PersonalLink icon={<GitHubIcon/>} link='https://github.com/RobertPollum' displayName='Robert Pollum'/>
         <PersonalLink icon={<LinkedInIcon/>} link='https://www.linkedin.com/in/robert-pollum-aa88b6b2/' displayName='Robert Pollum '/>
       </div>
     </main>
