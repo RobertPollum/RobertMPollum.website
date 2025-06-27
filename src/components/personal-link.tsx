@@ -9,7 +9,7 @@ interface PersonalComponentProps {
 export default function PersonalLink(props: PersonalComponentProps) {
     const {icon, link, displayName} = props;
     return (
-    <Grid container>
+    <Grid container spacing={2}>
         <Grid item xs={4}>
             {icon}
         </Grid>
