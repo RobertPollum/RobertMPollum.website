@@ -1,19 +1,21 @@
+import { UUID } from "crypto";
 import { useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
 
 
-const MarkdownViewer = (props: {markdownUrl: string}) => {
+const MarkdownViewer = (props: {id: UUID}) => {
+    const {id} = props;
     const [markdownContent, setMarkdownContent] = useState("");
     
     useEffect(() => {
-      fetch(props.markdownUrl)
+      fetch('BOGUSURL/' + id)
         .then((response) => response.text())
         .then((text) => setMarkdownContent(text));
     }, []);
 
     return (
     <section>
-      <ReactMarkdown>{markdownContent}</ReactMarkdown>
+      <Markdown>{markdownContent}</Markdown>
     </section>
   );
 }
