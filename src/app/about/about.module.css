@@ -1,0 +1,33 @@
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 6rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.section p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.list {
+  padding-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.section a {
+  text-decoration: underline;
+}

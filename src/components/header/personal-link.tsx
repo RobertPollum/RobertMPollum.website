@@ -10,10 +10,10 @@ export default function PersonalLink(props: PersonalComponentProps) {
     const {icon, link, displayName} = props;
     return (
     <Grid container spacing={2}>
-        <Grid item xs={4}>
+        <Grid size={{ xs: 4 }}>
             {icon}
         </Grid>
-        <Grid item xs={8}>
+        <Grid size={{ xs: 8 }}>
             <Link href={link} target="_blank" rel="noreferrer">{displayName}</Link>
         </Grid>
     </Grid>)

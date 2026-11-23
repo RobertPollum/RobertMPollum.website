@@ -18,9 +18,13 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import JsFiddleIcon from '@/components/icons/js-fiddle-icon';
 import PersonalLink from './personal-link';
+import ThemeToggle from '@/components/theme/theme-toggle';
+import styles from './app-bar.module.css';
 
-// const pages = [{menuName: 'NextCloud', link: '/nextcloud'}];
-const pages = new Array<{menuName: string, link: string}>();
+const pages = [
+  { menuName: 'Blog', link: '/blog' },
+  { menuName: 'About', link: '/about' },
+];
 const links = [
   {icon: <GitHubIcon/>, link: 'https://github.com/RobertPollum' , displayName: 'Github'},
   {icon: <LinkedInIcon/>, link: 'https://www.linkedin.com/in/robert-pollum-aa88b6b2' , displayName: 'LinkedIn'},
@@ -48,7 +52,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="transparent" enableColorOnDark className={styles.appBar}>
       <Container maxWidth="xl">
         
         <Toolbar disableGutters>
@@ -57,6 +61,7 @@ function ResponsiveAppBar() {
           <Typography
             variant="h6"
             noWrap
+            className={styles.logo}
             // component="a"
             // href="#app-bar-with-responsive-menu"
             sx={{
@@ -116,6 +121,7 @@ function ResponsiveAppBar() {
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
+            className={styles.logo}
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -135,7 +141,8 @@ function ResponsiveAppBar() {
               <Button
                 key={page.menuName + "-button"}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                className={styles.navLink}
+                sx={{ my: 2, color: 'text.primary', display: 'block' }}
               >
                 {page.menuName}
               </Button>
@@ -143,7 +150,8 @@ function ResponsiveAppBar() {
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
+            <ThemeToggle />
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <UserProfile />

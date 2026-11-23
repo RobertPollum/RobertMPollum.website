@@ -1,0 +1,149 @@
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 6rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.postList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.postItem a {
+  display: block;
+}
+
+.postItem h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.postItem h2:hover {
+  text-decoration: underline;
+}
+
+.postMeta {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-bottom: 0.4rem;
+}
+
+.postDescription {
+  opacity: 0.75;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.backLink:hover {
+  opacity: 1;
+}
+
+.postTitle {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.postDate {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  margin-bottom: 2.5rem;
+}
+
+.markdown {
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.markdown h1 {
+  font-size: 1.75rem;
+}
+
+.markdown h2 {
+  font-size: 1.5rem;
+}
+
+.markdown h3 {
+  font-size: 1.25rem;
+}
+
+.markdown p {
+  margin-bottom: 1.25rem;
+}
+
+.markdown a {
+  text-decoration: underline;
+}
+
+.markdown ul,
+.markdown ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.markdown li {
+  margin-bottom: 0.4rem;
+}
+
+.markdown code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: rgba(127, 127, 127, 0.15);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+}
+
+.markdown pre {
+  background: rgba(127, 127, 127, 0.15);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+
+.markdown pre code {
+  background: none;
+  padding: 0;
+}
+
+.markdown blockquote {
+  border-left: 3px solid rgba(127, 127, 127, 0.4);
+  padding-left: 1rem;
+  margin-bottom: 1.25rem;
+  opacity: 0.85;
+}
+
+.markdown img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.markdown hr {
+  margin: 2rem 0;
+  opacity: 0.3;
+}
+
+.empty {
+  opacity: 0.7;
+}
